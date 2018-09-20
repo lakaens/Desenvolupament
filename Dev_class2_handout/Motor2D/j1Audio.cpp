@@ -25,7 +25,7 @@ bool j1Audio::Awake()
 	LOG("Loading Audio Mixer");
 	bool ret = true;
 	SDL_Init(0);
-
+	audionode = App->nodeconfig.child("audio");
 	if(SDL_InitSubSystem(SDL_INIT_AUDIO) < 0)
 	{
 		LOG("SDL_INIT_AUDIO could not initialize! SDL_Error: %s\n", SDL_GetError());

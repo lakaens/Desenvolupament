@@ -23,7 +23,7 @@ bool j1Window::Awake()
 {
 	LOG("Init SDL window & surface");
 	bool ret = true;
-
+	windownode = App->nodeconfig.child("window");
 	if(SDL_Init(SDL_INIT_VIDEO) < 0)
 	{
 		LOG("SDL_VIDEO could not initialize! SDL_Error: %s\n", SDL_GetError());

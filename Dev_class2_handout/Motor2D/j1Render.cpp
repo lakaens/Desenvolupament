@@ -26,7 +26,7 @@ bool j1Render::Awake()
 	bool ret = true;
 	// load flags
 	Uint32 flags = SDL_RENDERER_ACCELERATED;
-
+	//rendernode = App->nodeconfig.child("render");
 	flags |= SDL_RENDERER_PRESENTVSYNC;
 	  
 	renderer = SDL_CreateRenderer(App->win->window, -1, flags);

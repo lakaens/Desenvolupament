@@ -2,7 +2,7 @@
 #define __j1INPUT_H__
 
 #include "j1Module.h"
-
+#include "PugiXml\src\pugixml.hpp"
 #define NUM_KEYS 352
 #define NUM_MOUSE_BUTTONS 5
 #define LAST_KEYS_PRESSED_BUFFER 50
@@ -68,6 +68,7 @@ public:
 
 private:
 	void CleanKeys();
+	pugi::xml_node inputnode;
 
 private:
 	bool		windowEvents[WE_COUNT];

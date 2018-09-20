@@ -2,6 +2,7 @@
 #define __j1WINDOW_H__
 
 #include "j1Module.h"
+#include "PugiXml\src\pugixml.hpp"
 
 struct SDL_Window;
 struct SDL_Surface;
@@ -44,6 +45,7 @@ private:
 	uint		scale;
 
 	const char* gamename;
+	pugi::xml_node windownode;
 };
 
 #endif // __j1WINDOW_H__

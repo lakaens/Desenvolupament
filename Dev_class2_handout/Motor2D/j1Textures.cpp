@@ -23,6 +23,7 @@ bool j1Textures::Awake()
 	LOG("Init Image library");
 	bool ret = true;
 	// load support for the PNG image format
+	//texturesnode = App->nodeconfig.child("textures");
 	int flags = IMG_INIT_PNG;
 	int init = IMG_Init(flags);
 
