@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<config>
+  
+  <name>Game Development</name>
+  
+  <window>
+    <FULLSCREEN fullscreen= "false">
+    </FULLSCREEN>
+    <BORDERLESS borderless="false">
+    </BORDERLESS>
+    <RESIZABLE resizable="true">
+    </RESIZABLE>
+    <FULLSCREEN_WINDOW fullscreen_window="false">
+    </FULLSCREEN_WINDOW>
+    <TITLE title="replaceme title">
+    </TITLE>
+    <WIDTH width="1024">
+    </WIDTH>
+    <HEIGHT height="768">
+    </HEIGHT>
+    <SCALE scale="1">
+    </SCALE>
+  </window>
+
+  <audio>
+    <musicvolume mvolume="22">
+    </musicvolume>
+    <fxvolume fvolume="22">
+    </fxvolume>
+  </audio>
+  
+  <input>
+    
+  </input>
+
+  <render>
+    
+  </render>
+
+  <textures>
+    
+  </textures>
+  
+  
+</config>
