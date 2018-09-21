@@ -11,50 +11,48 @@ private:
 
 public:
 	vec3() {}
-	vec3(const vec3& vec) :x(x), y(y), z(z) {}
+	vec3(const vec3& vector) :x(x), y(y), z(z) {}
 
 	vec3(const Type& x, const Type& y, const Type& z) :x(x), y(y), z(z) {}
 
-	vec3 normalize(const vec3& vec) const {
-		modul = sqrt(pow(vec.x, 2) + pow(vec.y, 2) + pow(vec.z, 2));
-		return (vec.x / modul, vec.y / modul, vec.z / modul);
+	vec3 normalize(const vec3& vector) const {
+		modul = sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vector.z, 2));
+		return (vector.x / modul, vector.y / modul, vector.z / modul);
 	}
 	vec3 zero() {
-		this->x = 0;
-		this->y = 0;
-		this->z = 0;
+		return(x = 0, y = 0, z = 0);
 	}
 	bool is_zero(const) {
 		return(this->x == 0 && this->y == 0 && this->z == 0);
 	}
-	vec3 distance_to(const vec3& vec) {
-		return (sqrt(pow(r.x, 2) + pow(r.y, 2) + pow(r.z, 2)));
+	vec3 distance_to(const vec3& vector) const{
+		return (sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vector.z, 2)));
 	}
-	vec3 operator +(const vec3& vec) {
-		vec3 r;
-		r.x = this->x + vec.x;
-		r.y = this->y + vec.y;
-		r.z = this->z + vec.z;
+	vec3 operator +(const vec3& vector) const{
+		return(this->x + vector.x, this->y + vector.y, this->z + vector.z);
 	}
-	vec3 operator -(const vec3& vec) {
-		vec3 r;
-		r.x = this->x - vec.x;
-		r.y = this->y - vec.y;
-		r.z = this->z - vec.z;
+	vec3 operator -(const vec3& vector) const{
+		return(this->x - vector.x, this->y - vector.y, this->z - vector.z);
 	}
-	vec3 operator +=(const vec3& vec) {
-		this->x += vec.x;
-		this->y += vec.y;
-		this->z += vec.z;
+	vec3 operator +=(const vec3& vector) {
+		this->x += vector.x;
+		this->y += vector.y;
+		this->z += vector.z;
+		return *this;
 	}
-	vec3 operator -=(const vec3& vec) {
-		this->x -= vec.x;
-		this->y -= vec.y;
-		this->z -= vec.z;
+	vec3 operator -=(const vec3& vector) {
+		this->x -= vector.x;
+		this->y -= vector.y;
+		this->z -= vector.z;
+		return *this;
 	}
-	vec3 operator ==(const vec3& vec) {
-		return (x == vec.x && y == vec.y && z == vec.z);
+	vec3 operator =(const vec3& vector) {
+		return(this->x = vector.x, this->y = vector.y, this->z = vector.z);
 	}
+	vec3 operator ==(const vec3& vector) {
+		return (x == vector.x && y == vector.y && z == vector.z);
+	}
+
 };
 
 
