@@ -15,18 +15,21 @@ public:
 
 	vec3(const Type& x, const Type& y, const Type& z) :x(x), y(y), z(z) {}
 
-	vec3 normalize(const vec3& vector) const {
-		modul = sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vector.z, 2));
-		return (vector.x / modul, vector.y / modul, vector.z / modul);
+	vec3 normalize() const {
+		(Type)modul = sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->, 2));
+		return (this->x / modul, this->y / modul, this->z / modul);
 	}
 	vec3 zero() {
-		return(x = 0, y = 0, z = 0);
+		this->x = (Type)0;
+		this->y = (Type)0;
+		this->z = (Type)0;
+		return *this;
 	}
 	bool is_zero(const) {
-		return(this->x == 0 && this->y == 0 && this->z == 0);
+		return(this->x == (Type)0 && this->y == (Type)0 && this->z == (Type)0);
 	}
 	vec3 distance_to(const vec3& vector) const{
-		return (sqrt(pow(vector.x, 2) + pow(vector.y, 2) + pow(vector.z, 2)));
+		return (Type) (sqrt((vector.x * vector.x) + (vector.y * vector.y) + (vector.z * vector.z)));
 	}
 	vec3 operator +(const vec3& vector) const{
 		return(this->x + vector.x, this->y + vector.y, this->z + vector.z);
@@ -47,11 +50,15 @@ public:
 		return *this;
 	}
 	vec3 operator =(const vec3& vector) {
-		return(this->x = vector.x, this->y = vector.y, this->z = vector.z);
+		this->x = vector.x;
+		this->y = vector.y;
+		this->z = vector.z;
+		return *this;
 	}
 	vec3 operator ==(const vec3& vector) {
-		return (x == vector.x && y == vector.y && z == vector.z);
+		return (this->x == vector.x && this->y == vector.y && this->z == vector.z);
 	}
+
 
 };
 
