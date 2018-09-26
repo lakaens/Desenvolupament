@@ -16,7 +16,7 @@ public:
 	vec3(const Type& x, const Type& y, const Type& z) :x(x), y(y), z(z) {}
 
 	vec3 normalize() const {
-		(Type)modul = sqrt(pow(this->x, 2) + pow(this->y, 2) + pow(this->, 2));
+		(Type)modul = sqrt(this->x*this->x + this->y*this->y + this->z*this->z);
 		return (this->x / modul, this->y / modul, this->z / modul);
 	}
 	vec3 zero() {
