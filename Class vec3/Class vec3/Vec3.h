@@ -57,8 +57,8 @@ public:
 	vec3 operator ==(const vec3& vector) {
 		return (this->x == vector.x && this->y == vector.y && this->z == vector.z);
 	}
-	float distance_to_squared(const vec3& vector) const {
-		return ((vector.x * vector.x) + (vector.y * vector.y) + (vector.z * vector.z))*((vector.x * vector.x) + (vector.y * vector.y) + (vector.z * vector.z));
+	TYPE distance_to_squared(const vec3& vector) const {
+		return (TYPE)((vector.x * vector.x) + (vector.y * vector.y) + (vector.z * vector.z))*((vector.x * vector.x) + (vector.y * vector.y) + (vector.z * vector.z));
 	}
 
 };
