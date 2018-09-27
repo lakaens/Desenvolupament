@@ -9,11 +9,11 @@
 // TODO 2: Create a struct to hold information for a TileSet
 // Ignore Terrain Types and Tile Types for now, but we want the image!
 // ----------------------------------------------------
-struct tileset_info
+struct TileSet
 {
-	uint tilewidth = 0, tilehight = 0, spacing = 0, margin = 0;
+	uint tilewidth = 0, tileheight = 0, spacing = 0, margin = 0;
 
-	p2SString Image_data();
+	SDL_Texture* texture;
 
 };
 
@@ -27,9 +27,18 @@ enum class renderorder
 	error
 };
 
+enum class orientation
+{
+	orthogonal,
+	isometric,
+	scalatedisometric,
+	hexagonal,
+	error
+};
+
 struct map_info
 {
-	p2SString orientation;
+	orientation orientation = orientation::error;
 	renderorder renderorder = renderorder::error;
 	uint width=0, height=0, tilewidth=0, tileheight=0;
 };
@@ -58,11 +67,14 @@ public:
 
 private:
 	bool LoadMapdata(pugi::xml_node&);
+	bool LoadTileSet(pugi::xml_node&);
 
 public:
 
 	// TODO 1: Add your struct for map info as public for now
 	map_info mapdata;
+
+	p2List<TileSet*> tilesetdata;
 
 private:
 
