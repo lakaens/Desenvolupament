@@ -68,7 +68,7 @@ bool j1Map::Load(const char* file_name)
 	{
 		// TODO 3: Create and call a private function to load and fill
 		// all your map data
-		LoadMapdata();
+		//LoadMapdata();
 	}
 
 	// TODO 4: Create and call a private function to load a tileset
@@ -86,9 +86,19 @@ bool j1Map::Load(const char* file_name)
 	return ret;
 }
 
-bool j1Map::LoadMapdata(pugi::xml_node& map_node) 
+bool j1Map::LoadMapdata(pugi::xml_node& node) 
 {
-	map_file=
+	
+	mapdata.orientation = node.child("map").attribute("orientation").as_string();
+	//mapdata.renderorder = node.child("map").attribute("renderorder").as_string;
+	mapdata.width = node.child("map").attribute("width").as_uint();
+	mapdata.height = node.child("map").attribute("height").as_uint();
+	mapdata.tilewidth = node.child("map").attribute("tilewidth").as_uint();
+	mapdata.tileheight = node.child("map").attribute("tileheight").as_uint();
+	return true;
+
+
+
 
 }
 

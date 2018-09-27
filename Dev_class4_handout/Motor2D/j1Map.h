@@ -29,9 +29,9 @@ enum class renderorder
 
 struct map_info
 {
-	char* orientation;
+	p2SString orientation;
 	renderorder renderorder = renderorder::error;
-	uint width=0, height=0, tilewidth=0, tilehight=0;
+	uint width=0, height=0, tilewidth=0, tileheight=0;
 };
 
 // ----------------------------------------------------
