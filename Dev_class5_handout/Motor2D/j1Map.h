@@ -14,14 +14,17 @@ struct MapLayer
 	uint* tiles = nullptr;
 	~MapLayer() {
 		if (tiles != nullptr) {
-			delete []tiles;
+			delete[]tiles;
 		}
 	}
+	inline uint Get(int x, int y) const;
+	
 	
 };
 // ----------------------------------------------------
 
 	// TODO 6: Short function to get the value of x,y
+//
 
 
 
@@ -101,10 +104,11 @@ private:
 	// bool LoadLayer(pugi::xml_node& node, MapLayer* layer);
 	bool LoadLayer(pugi::xml_node& node, MapLayer* layer);
 
+
 public:
 
 	MapData data;
-	
+	TileSet tileset;
 
 private:
 
