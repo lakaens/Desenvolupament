@@ -44,7 +44,8 @@ public:
 		
 		concatenated.allocated_memory = this->allocated_memory + chain.allocated_memory;
 		concatenated.string = new char[concatenated.allocated_memory];
-		strcat_s(this->string, concatenated.allocated_memory, chain.string);
+		strcpy_s(concatenated.string,concatenated.allocated_memory,string);
+		strcat_s(concatenated.string, concatenated.allocated_memory, chain.string);
 		return concatenated;
 	
 		
