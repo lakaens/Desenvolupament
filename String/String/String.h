@@ -40,8 +40,13 @@ public:
 	
 	String operator+(const String &chain) {
 		
-		strcat_s(this->string, allocated_memory, chain.string);
-		return String(this->string);
+		String concatenated;
+		
+		concatenated.allocated_memory = this->allocated_memory + chain.allocated_memory;
+		concatenated.string = new char[concatenated.allocated_memory];
+		strcat_s(this->string, concatenated.allocated_memory, chain.string);
+		return concatenated;
+	
 		
 
 	}
