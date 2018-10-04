@@ -26,13 +26,7 @@ public:
 			strcpy_s(this->string,allocated_memory,string);
 		}
 	}
-	String(const String& chain) {
-		this->allocated_memory = chain.allocated_memory;
-		this->string = chain.string;
-		allocated_memory = strlen(string) + 1;
-		this->string = new char[allocated_memory];
-		strcpy_s(this->string, allocated_memory, string);
-	}
+	
 	String operator=(const char* chain) {
 		if (strlen(chain) +1 <= this->allocated_memory) {
 
@@ -43,10 +37,13 @@ public:
 	String operator=(String &chain) {
 		return String(chain.string);
 	}
-	void MakeString(unsigned int size, char* ch) {
-		for (int i = 0; i < size; i++) {
-			string[i] = ch[i];
-		}
+	
+	String operator+(const String &chain) {
+		
+		strcat_s(this->string, allocated_memory, chain.string);
+		return String(this->string);
+		
+
 	}
 };
 #endif // !STRING_H
